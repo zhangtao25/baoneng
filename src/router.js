@@ -11,7 +11,17 @@ export default new Router({
     },
     {
       path:'/main',
-      component:()=>import('./views/main')
+      component:()=>import('./views/main'),
+      children:[
+        {
+          path:'page1',
+          component:()=>import('./views/page1')
+        },
+        {
+          path:'page2',
+          component:()=>import('./views/page2')
+        }
+      ]
     }
   ]
 })
