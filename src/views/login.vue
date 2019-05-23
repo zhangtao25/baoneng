@@ -4,8 +4,8 @@
     <div class="bg_op"></div>
     <div class="margin">
       <div>
-        <p>
-          <img style="width: 40px" src="./../assets/logo.png" alt="">
+        <p style="display: flex;align-items: center">
+          <img style="width: 40px;margin-right: 10px" src="./../assets/logo.png" alt="">
           <span style="color: #a9a9a9;font-size: 36px">智慧能源管理平台</span>
         </p>
         <p style="font-size: 72px;color: white;margin: 50px 0 0 50px">
