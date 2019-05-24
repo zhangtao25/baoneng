@@ -69,11 +69,15 @@
     padding: 10px;
     box-sizing: border-box;
     background-color: #f3f3f4;
+    position: relative;
+    width: 100%;
   }
   #main>.container>main>.wrap{
     border: 1px solid #e7eaec;
     padding: 10px;
     background-color: white;
+    position: absolute;
+    width: calc(100% - 40px);
   }
 </style>
 
