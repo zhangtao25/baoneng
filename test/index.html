@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./../public/css/init.css">
+  <!-- 引入样式 -->
+  <script src="./../node_modules/vue/dist/vue.min.js"></script>
+  <link rel="stylesheet" href="./el.css">
+  <!-- 引入组件库 -->
+  <script src="el.js"></script>
+  <style>
+    .parent{position:relative;background:#ddd;height: 100vh}
+
+    .l-child{position:absolute;transition:1s;width:100px;background:#bbb;height: 100vh}
+
+    .r-child{margin-left:100px;transition:1s;background:#999;height: 100vh;}
+  </style>
+  <title>Document</title>
+</head>
+<body>
+<div id="app">
+  <div id="box">
+    <div class="parent">
+
+      <div class="l-child" :style="{width:w}">
+        <el-button @click="fn">按我</el-button>
+      </div>
+
+      <div class="r-child" :style="{marginLeft:w}">
+        <el-table
+          :data="tableData"
+          height="250"
+          border
+          style="width: 100%">
+          <el-table-column
+            prop="date"
+            label="日期"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="name"
+            label="姓名"
+            width="180">
+          </el-table-column>
+          <el-table-column
+            prop="address"
+            label="地址">
+          </el-table-column>
+        </el-table>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+
+<script>
+  new Vue({
+    el:'#app',
+    data:{
+      msg:'hello world!',
+      w:'200px',
+      tableData: [{
+        date: '2016-05-03',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-08',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-06',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }, {
+        date: '2016-05-07',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄'
+      }]
+    },
+    methods:{
+      fn(){
+        this.w = '500px'
+      }
+    }
+  })
+</script>
+</html>

@@ -70,6 +70,8 @@
   .sidebar-menu{
     overflow: hidden;
     min-height: 600px;
+    position: absolute;
+    height: 100vh;
   }
   .sidebar-menu:not(.el-menu--collapse) {
     width: 200px;
