@@ -1,9 +1,8 @@
 <template>
   <div id="main">
     <sidebar-menu @give-indexpath="onchangeBreads"></sidebar-menu>
-    <div class="container" :style="{marginLeft:isCollapseSideMenuState?'65px':'201px'}">
+    <div class="container">
       <header style="color: white">
-        <div class="color-block"></div>
         <navbar-header></navbar-header>
       </header>
       <main>
@@ -23,7 +22,6 @@
   import SidebarMenu from './sidebar-menu'
   import Breadcrumb from './breadcrumb'
   import NavbarHeader from './navbar-header'
-  import {mapGetters} from 'vuex'
   export default {
     components:{
       'sidebar-menu': SidebarMenu,
@@ -39,33 +37,20 @@
       onchangeBreads(val){
         this.breads=val;
       }
-    },
-    computed:{
-      ...mapGetters(['isCollapseSideMenuState'])
     }
   };
 </script>
 <style>
   #main{
+    display: flex;
     height: 100vh;
-    position: relative;
   }
   #main>.container{
-    transition: all .5s ease 0s;
-    margin-left: 201px;
+    flex: 1;
   }
   #main>.container>header{
-    position: relative;
     height: 60px;
     background-color: #2f4050;
-  }
-  #main>.container>header .color-block{
-    height: 60px;
-    width: 100px;
-    background-color: #2f4050;
-    position: absolute;
-    left: -100px;
-    z-index: -4
   }
   #main>.container>footer{
     background-color: #fff;
@@ -84,11 +69,15 @@
     padding: 10px;
     box-sizing: border-box;
     background-color: #f3f3f4;
+    position: relative;
+    width: 100%;
   }
   #main>.container>main>.wrap{
     border: 1px solid #e7eaec;
     padding: 10px;
     background-color: white;
+    position: absolute;
+    width: calc(100% - 40px);
   }
 </style>
 
